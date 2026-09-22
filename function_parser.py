@@ -16,7 +16,8 @@ def parse_function (expression):
     return function
 
 def validate_function (function):
-    pass # verify if is instance of SymPy
+   # verify if is instance of SymPy
+   return (isinstance(function, sp.Expr) and function.has(x))
 
 def create_numeric_function (function):
     pass # transform in numerical function
