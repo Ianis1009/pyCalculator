@@ -28,4 +28,16 @@ def calculate_error (exact_value, approximate_value):
     return abs(exact_value - approximate_value)
 
 def calculate_integrals (function, numeric_function, a, b, n =1005):
-    pass 
+    exact = analytical_integral(function, a, b)
+    trapezoidal = trapezoidal_integral(numeric_function, a, b, n)
+    simpson = simpson_integral(numeric_function, a, b, n)
+    trapezoidal_error = calculate_error(exact, trapezoidal)
+    simpson_error = calculate_error(exact, simpson)
+
+    return {
+        "exact": exact,
+        "trapezoidal": trapezoidal,
+        "simpson": simpson,
+        "trapezoidal_error": trapezoidal_error,
+        "simpson_error": simpson_error,
+    }
