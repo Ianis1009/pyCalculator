@@ -25,5 +25,11 @@ def create_numeric_function (function):
 
 
 def get_function (expression):
-    pass # return the math function
+    # return the math function
+    function = parse_function(expression)
+    if not validate_function(function):
+        raise ValueError("Functia introdusa nu este valida!")
+    numeric_function = create_numeric_function(function)
+
+    return function, numeric_function
 
