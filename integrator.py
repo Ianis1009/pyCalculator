@@ -7,7 +7,11 @@ def analytical_integral(function, a, b):
     return sp.integrate(function, (x, a, b))
 
 def trapezoidal_integral(numeric_function, a, b, n=1005):
-    pass 
+    points = np.linspace(a, b, n + 1)
+    values = numeric_function(points)
+    h = (b - a) / n 
+    result = h * (0.5 * values[0] + np.sum(values[1:-1]) + 0.5 * values[-1])
+    return float(result)
 
 def simpson_integral(numeric_function, a, b, n = 1005):
     pass
