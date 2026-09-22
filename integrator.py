@@ -14,7 +14,13 @@ def trapezoidal_integral(numeric_function, a, b, n=1005):
     return float(result)
 
 def simpson_integral(numeric_function, a, b, n = 1005):
-    pass
+    if n % 2 != 0:
+        raise ValueError("n trebuie sa fie par pentru metoda Simpson.")
+    points = np.linspace(a, b, n + 1)
+    values = numeric_function(points)
+    h = (b - a) / n 
+    result = (h / 3 * (values[0] + values[-1]+ 4*np.sum(values[1:-1:2]) + 2 * np.sum(values[2:-1:2]))) 
+    return float(result)
 
 def calculate_error (exact_value, approximate_value):
     pass
