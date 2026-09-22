@@ -20,7 +20,8 @@ def validate_function (function):
    return (isinstance(function, sp.Expr) and function.has(x))
 
 def create_numeric_function (function):
-    pass # transform in numerical function
+    # transform in numerical function
+    return sp.lambdify(x, function, modules=["numpy"])
 
 def get_function (expression):
     pass # return the math function
