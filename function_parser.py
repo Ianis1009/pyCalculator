@@ -23,6 +23,7 @@ def create_numeric_function (function):
     # transform in numerical function
     return sp.lambdify(x, function, modules=["numpy"])
 
+
 def get_function (expression):
     pass # return the math function
 
