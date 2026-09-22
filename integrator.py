@@ -23,7 +23,9 @@ def simpson_integral(numeric_function, a, b, n = 1005):
     return float(result)
 
 def calculate_error (exact_value, approximate_value):
-    pass
+
+    exact = float(sp.N(exact_value))
+    return abs(exact_value - approximate_value)
 
 def calculate_integrals (function, numeric_function, a, b, n =1005):
     pass 
