@@ -4,7 +4,7 @@ import sympy as sp
 from function_parser import x
 
 def analytical_integral(function, a, b):
-    pass 
+    return sp.integrate(function, (x, a, b))
 
 def trapezoidal_integral(numeric_function, a, b, n=1005):
     pass 
