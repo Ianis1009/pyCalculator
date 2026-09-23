@@ -11,3 +11,6 @@ from function_parser import x
 
 OUTPUT_DIR = "output"
 
+def prepare_output_directory():
+    os.makedirs(OUTPUT_DIR, exist_ok=True)
+
