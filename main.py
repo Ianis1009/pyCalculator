@@ -10,4 +10,10 @@ def get_float_input (message):
             print("Valoare invalida -> ", "Introdu un numar.")
 
 def get_function_input():
-    
+    while True:
+        expression = input("\nIntrodu functia f(x): ")
+        try:
+            return get_function(expression)
+        except ValueError as error:
+            print(f"\nEroare: {error}")
+
