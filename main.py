@@ -17,3 +17,44 @@ def get_function_input():
         except ValueError as error:
             print(f"\nEroare: {error}")
 
+def run_application ():
+    print()
+    print("=" * 60)
+    print("FUNCTION VISUALIZER & CALCULATOR")
+    print("=" * 60)
+
+    function, numeric_function = (get_function_input())
+    a = get_float_input("Limita inferioara a: ")
+    b = get_float_input("Limita superioara b: ")
+
+    if a >= b:
+        print("\nEroare: conditie -> a < b.")
+        return
+
+    while True:
+        tangent_point =  get_float_input(f"Punctul x_0 pentru tangenta " f"[{a}, {b}]: ")
+        if a <= tangent_point <= b:
+            break
+        print("Punctul trebuie sa apartina " f"intervalului [{a}, {b}].")
+        print("\nSe calculeaza...")
+
+        integral_results = calculate_integrals(function, numeric_function, a, b)
+        print()
+        print("=" * 60)
+        print("REZULTATE")
+        print("=" * 60)
+
+        print(f"\nf(x) = {function}")
+        print(f"Interval = [{a}, {b}]")
+        print("\nIntegrala exacta:")
+        print(f"  {integral_results['exact']}")
+        print("\nMetoda trapezelor:")
+        print(f"  {integral_results['trapezoidal']:.12f}")
+        print(f"  Eroare: " f"{integral_results['trapezoidal_error']:.3e}")
+
+        print("\nMetoda Simpson:")
+
+        print(f"  {integral_results['simpson']:.12f}")
+        print(f"  Eroare: " f"{integral_results['simpson_error']:.3e}")
+
+        # DASHBOARD
