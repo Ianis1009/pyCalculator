@@ -14,32 +14,19 @@ OUTPUT_DIR = "output"
 def prepare_output_directory():
     os.makedirs(OUTPUT_DIR, exist_ok=True)
 
-def get_safe_values (numeric_function, points):
-    while np.errstate(divide="ignore", invalid="ignore", over="ignore"):
-        values = numeric_function(points)
-    values =  np.asarray(values, dtype=float)
-    values[~np.isfinite(values)] = np.nan
 
+def get_safe_values(numeric_function,points):
+    with np.errstate(divide="ignore",invalid="ignore",over="ignore"):
+        values=numeric_function(points)
+    values=np.asarray(values,dtype=float)
+    values[~np.isfinite(values)]=np.nan
     return values
 
-def find_roots (function, a, b):
-    try:
-        roots = sp.solve(function, x)
-    except Exception:
-        return []
-    real = []
 
-    for root in roots:
+def find_roots(function,a,b):
+    roots=sp.solve(function,x)
+    return [float(root) for root in roots if root.is_real and a<=float(root)<=b]
 
-        try:
-            if root.is_real is True:
-                value = float(root)
-                if a <= value <= b:
-                    real.append(value)
-        except (TypeError, ValueError):
-            continue
-
-    return real 
 
 def create_dashboard(function,numeric_function,a,b,integral_results,tangent_point=None):
 
@@ -49,7 +36,9 @@ def create_dashboard(function,numeric_function,a,b,integral_results,tangent_poin
     derivative=sp.diff(function,x)
     derivative_numeric=sp.lambdify(x,derivative,modules=["numpy"])
     derivative_values=get_safe_values(derivative_numeric,points)
+    print("1")
     roots=find_roots(function,a,b)
+    print("2")
 
     fig=plt.figure(figsize=(16,11))
     fig.suptitle("FUNCTION & INTEGRAL VISUALIZER",fontsize=20,fontweight="bold")
@@ -82,7 +71,7 @@ def create_dashboard(function,numeric_function,a,b,integral_results,tangent_poin
 
     ax3=fig.add_subplot(2,2,3)
     ax3.plot(points,values,label="$f(x)$")
-    
+
     if tangent_point is not None:
         function_at_point=float(numeric_function(tangent_point))
         derivative_at_point=float(derivative_numeric(tangent_point))
