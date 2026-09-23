@@ -22,3 +22,22 @@ def get_safe_values (numeric_function, points):
 
     return values
 
+def find_roots (function, a, b):
+    try:
+        roots = sp.solve(function, x)
+    except Exception:
+        return []
+    real = []
+
+    for root in roots:
+
+        try:
+            if root.is_real is True:
+                value = float(root)
+                if a <= value <= b:
+                    real.append(value)
+        except (TypeError, ValueError):
+            continue
+
+    return real 
+
