@@ -82,6 +82,7 @@ def create_dashboard(function,numeric_function,a,b,integral_results,tangent_poin
 
     ax3=fig.add_subplot(2,2,3)
     ax3.plot(points,values,label="$f(x)$")
+    
     if tangent_point is not None:
         function_at_point=float(numeric_function(tangent_point))
         derivative_at_point=float(derivative_numeric(tangent_point))
