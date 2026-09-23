@@ -36,9 +36,7 @@ def create_dashboard(function,numeric_function,a,b,integral_results,tangent_poin
     derivative=sp.diff(function,x)
     derivative_numeric=sp.lambdify(x,derivative,modules=["numpy"])
     derivative_values=get_safe_values(derivative_numeric,points)
-    print("1")
     roots=find_roots(function,a,b)
-    print("2")
 
     fig=plt.figure(figsize=(16,11))
     fig.suptitle("FUNCTION & INTEGRAL VISUALIZER",fontsize=20,fontweight="bold")
