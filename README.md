@@ -9,3 +9,9 @@
 - Point `x₀`
 
 # Output
+
+- Mathematical properties
+- Dashboard
+
+---
+
