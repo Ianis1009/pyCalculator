@@ -26,5 +26,22 @@ Input:
 
 ![Demo 1](output/demo1.png)
 
+For this function:
 
+$$
+\int_{-3}^{3}x^2\,dx=18
+$$
 
+Derivative:
+
+$$
+f'(x)=2x
+$$
+
+Tangent at `x₀ = 1`:
+
+$$
+y=2x-1
+$$
+
+---
