@@ -182,3 +182,15 @@ Only roots inside `[a,b]` are displayed.
 
 ---
 
+# Python Implementation
+
+The project uses three main Python libraries:
+
+| Library | Purpose |
+|---|---|
+| **SymPy** | Symbolic mathematics |
+| **NumPy** | Numerical calculations |
+| **Matplotlib** | Visualization |
+
+---
+
