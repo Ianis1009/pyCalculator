@@ -69,3 +69,74 @@ x=-\pi,\quad 0,\quad \pi
 $$
 
 ---
+
+# Mathematical Theory
+
+## 1. Definite Integral
+
+The exact definite integral is:
+
+$$
+\int_a^b f(x)\,dx=F(b)-F(a)
+$$
+
+where `F(x)` is an antiderivative of `f(x)`.
+
+The project calculates the exact integral symbolically using **SymPy**.
+
+---
+
+## 2. Trapezoidal Rule
+
+The interval `[a,b]` is divided into `n` subintervals.
+
+$$
+h=\frac{b-a}{n}
+$$
+
+The approximation is:
+
+$$
+T_n=
+h\left[
+\frac{f(x_0)+f(x_n)}{2}
++
+\sum_{i=1}^{n-1}f(x_i)
+\right]
+$$
+
+---
+
+## 3. Simpson's Rule
+
+For an even `n`:
+
+$$
+S_n=
+\frac{h}{3}
+\left[
+f(x_0)+f(x_n)
++4\sum f(x_{odd})
++2\sum f(x_{even})
+\right]
+$$
+
+The coefficients follow the pattern:
+
+    1  4  2  4  2  ...  4  1
+
+---
+
+## 4. Numerical Error
+
+The absolute error is:
+
+$$
+E=
+|I_{exact}-I_{approx}|
+$$
+
+The project calculates the error for both the Trapezoidal Rule and Simpson's Rule.
+
+---
+
