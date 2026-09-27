@@ -204,3 +204,37 @@ The project uses three main Python libraries:
 | `plotter.py` | Graphs and dashboard |
 | `requirements.txt` | Project dependencies |
 
+
+## Program Workflow
+
+```text
+User Input
+    ↓
+Function Parsing
+    ↓
+┌─────────────────────────────┐
+│           SymPy             │
+│                             │
+│  • Exact Integral           │
+│  • Derivative               │
+│  • Roots                    │
+└─────────────────────────────┘
+    ↓
+┌─────────────────────────────┐
+│           NumPy             │
+│                             │
+│  • Trapezoidal Rule         │
+│  • Simpson's Rule           │
+│  • Tangent                  │
+└─────────────────────────────┘
+    ↓
+┌─────────────────────────────┐
+│         Matplotlib          │
+│                             │
+│         Dashboard           │
+└─────────────────────────────┘
+    ↓
+dashboard.png
+
+```
+
