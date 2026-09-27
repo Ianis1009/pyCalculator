@@ -140,3 +140,45 @@ The project calculates the error for both the Trapezoidal Rule and Simpson's Rul
 
 ---
 
+## 5. Derivative
+
+The derivative is calculated symbolically using:
+
+    sp.diff(function, x)
+
+Mathematically:
+
+$$
+f'(x)=\frac{df}{dx}
+$$
+
+---
+
+## 6. Tangent Line
+
+For a point `x₀`, the tangent is:
+
+$$
+y=f(x_0)+f'(x_0)(x-x_0)
+$$
+
+The dashboard displays both the function and its tangent.
+
+---
+
+## 7. Roots
+
+A root satisfies:
+
+$$
+f(x)=0
+$$
+
+The project finds roots using:
+
+    sp.solve(function, x)
+
+Only roots inside `[a,b]` are displayed.
+
+---
+
