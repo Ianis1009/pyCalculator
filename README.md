@@ -194,3 +194,13 @@ The project uses three main Python libraries:
 
 ---
 
+### Modules
+
+| File | Purpose |
+|---|---|
+| `main.py` | User input and program flow |
+| `function_parser.py` | Function parsing and validation |
+| `integrator.py` | Exact and numerical integration |
+| `plotter.py` | Graphs and dashboard |
+| `requirements.txt` | Project dependencies |
+
