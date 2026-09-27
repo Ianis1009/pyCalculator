@@ -45,3 +45,27 @@ y=2x-1
 $$
 
 ---
+
+### 2. `f(x) = sin(x)`
+
+Input:
+
+    f(x) = sin(x)
+    [a,b] = [-π,π]
+    x₀ = 1
+
+![Demo 2](output/demo2.png)
+
+Derivative:
+
+$$
+f'(x)=\cos(x)
+$$
+
+Roots:
+
+$$
+x=-\pi,\quad 0,\quad \pi
+$$
+
+---
