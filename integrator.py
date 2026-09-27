@@ -22,10 +22,9 @@ def simpson_integral(numeric_function, a, b, n = 1006):
     result = (h / 3 * (values[0] + values[-1]+ 4*np.sum(values[1:-1:2]) + 2 * np.sum(values[2:-1:2]))) 
     return float(result)
 
-def calculate_error (exact_value, approximate_value):
-
-    exact = float(sp.N(exact_value))
-    return abs(exact_value - approximate_value)
+def calculate_error(exact_value, approximate_value):
+    exact=float(sp.N(exact_value))
+    return float(abs(exact-approximate_value))
 
 def calculate_integrals (function, numeric_function, a, b, n =1006):
     exact = analytical_integral(function, a, b)
