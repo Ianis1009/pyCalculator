@@ -237,4 +237,11 @@ Function Parsing
 dashboard.png
 
 ```
+# Technologies
 
+- Python3
+- SymPy
+- NumPy
+- Matplotlib
+- WSL2
+- Git
