@@ -15,3 +15,16 @@
 
 ---
 
+## Demo
+
+### 1. `f(x) = x²`
+
+Input:
+    f(x) = x²
+    [a, b] = [-3, 3]
+    x₀ = 1
+
+![Demo 1](output/demo1.png)
+
+
+
