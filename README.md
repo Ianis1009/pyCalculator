@@ -29,7 +29,7 @@ Input:
 For this function:
 
 $$
-\int_{-3}^{3}x^2\,dx=18
+\int_{-3}^{3}x^2\ dx=18
 $$
 
 Derivative:
